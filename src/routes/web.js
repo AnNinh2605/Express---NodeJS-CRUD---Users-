@@ -1,12 +1,9 @@
 const express = require('express')
 const router = express.Router()
+const { getHomePage, addUser, addUserButton } = require('../controllers/homeController')
 
-router.get('/', (req, res) => {
-    res.render('homePage.ejs')
-})
-
-router.get('/abc', (req, res) => {
-    res.send('ABC')
-})
+router.get('/', getHomePage)
+router.get('/add-user', addUser)
+router.post('/add-user-button', addUserButton)
 
 module.exports = router
