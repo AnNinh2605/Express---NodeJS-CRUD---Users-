@@ -84,3 +84,13 @@ button {
     padding: 4px;
     cursor: pointer;
 }
+.hiddenInput{
+    display: none;
+}
+td:last-child {
+    display: flex;;    
+}
+
+td form:first-child {
+    margin-right: 10px;
+}

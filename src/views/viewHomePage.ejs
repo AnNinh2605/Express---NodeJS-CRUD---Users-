@@ -11,10 +11,10 @@
 <body>
     <div class="topnav">
         <a class="active" href="#home">Home</a>
-        <a href="/add-user">Add User</a>
+        <a href="/add-user">Add user</a>
     </div>
 
-    <h1 id="titleTable">Users Table</h1>
+    <h1 id="titleTable">Users List</h1>
 
     <table id="customers">
         <tr>
@@ -22,13 +22,32 @@
             <th>Fullname</th>
             <th>Email</th>
             <th>City</th>
+            <th>Action</th>
         </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-            <td>Germany</td>
-        </tr>
+        <% rows.forEach(function(row) { %>
+            <tr>
+                <td>
+                    <%= row.UserID%>
+                </td>
+                <td>
+                    <%= row.FullName%>
+                </td>
+                <td>
+                    <%= row.Email%>
+                </td>
+                <td>
+                    <%= row.City%>
+                </td>
+                <td>
+                    <form action="/edit-user/<%= row.UserID%>" method="get">
+                        <button>Edit</button>
+                    </form>
+                    <form action="/delete-user/<%= row.UserID%>" method="get">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }); %>
     </table>
 </body>
 

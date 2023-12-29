@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/add-user">Add user</a>
+    </div>
+
+    <form action="/delete-user-button" id="addUser" method="post">
+        <fieldset>
+            <legend id="legend">Delete user</legend>
+
+            <div class="hiddenInput">
+                <label for="id">Id</label>
+                <input type="text" id="id" value="<%= row.UserID%>" name="id" ><br><br>    
+            </div>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" value="<%= row.FullName%>" name="name"><br><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" value="<%= row.Email%>" name="email"><br><br>
+
+            <label for="city">City</label>
+            <input type="text" id="city" value="<%= row.City%>" name="city"><br><br>
+
+            <button>Confirm</button>
+        </fieldset>
+    </form>
+
+    <%JSON.stringify(row)%>
+
+</body>
+
+</html>
